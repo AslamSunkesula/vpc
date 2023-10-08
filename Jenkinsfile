@@ -10,9 +10,10 @@ pipeline {
     stages {
         stage('Init') {
             steps {
+                dir('/home/centos/workspace/Aslam')
                
                 sh '''
-            
+                cd vpc.tf
                 ls -ltr
                 pwd
                 terrform init 
@@ -23,8 +24,10 @@ pipeline {
         }
         stage('Plan') {
             steps {
+              dir('/home/centos/workspace/Aslam')
               sh '''
-                 ls -ltr
+                cd vpc.tf
+                ls -ltr
                 pwd
                 terrform plan 
                 '''
