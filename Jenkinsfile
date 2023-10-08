@@ -10,8 +10,9 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-              
+               
                 sh '''
+                
                 ls -ltr
                 pwd
                 terrform init 
