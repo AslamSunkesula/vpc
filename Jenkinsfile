@@ -25,7 +25,7 @@ pipeline {
                 cd vpc.tf
                  ls -ltr
                 pwd
-                terrform init 
+                terrform plan 
                 '''
             }
         }
