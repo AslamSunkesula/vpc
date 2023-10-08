@@ -12,7 +12,6 @@ pipeline {
             steps {
               
                 sh '''
-                cd vpc.tf
                 ls -ltr
                 pwd
                 terrform init 
@@ -22,7 +21,6 @@ pipeline {
         stage('Plan') {
             steps {
               sh '''
-                cd vpc.tf
                  ls -ltr
                 pwd
                 terrform plan 
