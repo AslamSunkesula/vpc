@@ -2,7 +2,7 @@ pipeline {
  agent any
   options {
         ansiColor('xterm')
-         timeout(time: 1, unit: 'HOURS')
+       //  timeout(time: 1, unit: 'HOURS')
 
     } 
 
@@ -12,7 +12,7 @@ pipeline {
             steps {
                
                 sh '''
-                
+            
                 ls -ltr
                 pwd
                 terrform init 
