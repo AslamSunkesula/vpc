@@ -26,6 +26,8 @@ pipeline {
                 pwd
                 terrform plan 
                 '''
+
+                echo 'push from git hub'
             }
         }
         stage('Approve') {
