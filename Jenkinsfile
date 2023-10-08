@@ -17,6 +17,8 @@ pipeline {
                 pwd
                 terrform init 
                 '''
+                echo 'push from git hub'
+
             }
         }
         stage('Plan') {
@@ -27,7 +29,6 @@ pipeline {
                 terrform plan 
                 '''
 
-                echo 'push from git hub'
             }
         }
         stage('Approve') {
