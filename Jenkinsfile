@@ -10,7 +10,7 @@ agent { node { label 'AGENT-1' } }
             steps {
                
                 sh '''
-                cd vpc.tf
+           
                 ls -ltr
                 pwd
                 terraform init 
@@ -22,7 +22,7 @@ agent { node { label 'AGENT-1' } }
         stage('Plan') {
             steps {
               sh '''
-                cd vpc.tf
+          
                 ls -ltr
                 pwd
                 terraform plan 
