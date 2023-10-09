@@ -22,7 +22,7 @@ agent { node { label 'AGENT-1' } }
         stage('Plan') {
             steps {
               sh '''
-          
+                terraform force-unlock -force 1fd9e16d-14b4-1c92-515a-82cbf64620e4
                 ls -ltr
                 pwd
                 terraform plan 
