@@ -53,6 +53,16 @@ agent { node { label 'AGENT-1' } }
               //  error 'this is failed '
             }
         }
+         stage('Apply') {
+            steps {
+              sh '''
+                ls -ltr
+                pwd
+                terraform apply
+                '''
+
+            }
+        }
     }     
     post { 
         always { 
