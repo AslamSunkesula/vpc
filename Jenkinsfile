@@ -1,7 +1,7 @@
 pipeline {
 agent { node { label 'AGENT-1' } }
   options {
-        ansiColor('xterm')
+       // ansiColor('xterm')
          timeout(time: 1, unit: 'HOURS')
     } 
 
