@@ -33,8 +33,6 @@ agent { node { label 'AGENT-1' } }
                         // Confirm the unlock with 'yes' and force-unlock
                         input message: 'Do you want to force-unlock Terraform state?', ok: 'yes', submitter: 'user'
                         sh 'terraform force-unlock 1fd9e16d-14b4-1c92-515a-82cbf64620e4'
-
-                        sh 'terraform force-unlock 1fd9e16d-14b4-1c92-515a-82cbf64620e4'
                     }
                 }
             }
