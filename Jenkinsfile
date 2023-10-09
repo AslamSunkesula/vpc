@@ -58,7 +58,7 @@ agent { node { label 'AGENT-1' } }
               sh '''
                 ls -ltr
                 pwd
-                terraform apply
+                terraform apply -auto-approve
                 '''
 
             }
