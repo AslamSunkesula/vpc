@@ -7,19 +7,7 @@ agent { node { label 'AGENT-1' } }
 
     stages {
 
-       stage('Unlock Terraform State') {
-            steps {
-                script {
-                    // Change to the directory where your Terraform configuration is located
-                    dir('/home/centos/workspace/demo-pipeline1@2') {
-                        // Run terraform force-unlock with the lock ID
-                        sh 'terraform force-unlock 1fd9e16d-14b4-1c92-515a-82cbf64620e4'
-                    }
-                }
-            }
-        }
-
-
+      
         stage('Init') {
             steps {
                
@@ -31,6 +19,19 @@ agent { node { label 'AGENT-1' } }
                 '''
                 echo 'push from git hub'
 
+            }
+        }
+
+
+        stage('Unlock Terraform State') {
+            steps {
+                script {
+                    // Change to the directory where your Terraform configuration is located
+                    dir('/home/centos/workspace/demo-pipeline1@2') {
+                        // Run terraform force-unlock with the lock ID
+                        sh 'terraform force-unlock 1fd9e16d-14b4-1c92-515a-82cbf64620e4'
+                    }
+                }
             }
         }
         stage('Plan') {
