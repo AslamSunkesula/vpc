@@ -1,22 +1,19 @@
 pipeline {
- agent any
+agent { node { label 'AGENT-1' } }
   options {
         ansiColor('xterm')
          timeout(time: 1, unit: 'HOURS')
-
     } 
 
-    
     stages {
         stage('Init') {
             steps {
-                dir('/home/centos/workspace/Aslam')
                
                 sh '''
                 cd vpc.tf
                 ls -ltr
                 pwd
-                terrform init 
+                terraform init 
                 '''
                 echo 'push from git hub'
 
@@ -24,12 +21,11 @@ pipeline {
         }
         stage('Plan') {
             steps {
-              dir('/home/centos/workspace/Aslam')
               sh '''
                 cd vpc.tf
                 ls -ltr
                 pwd
-                terrform plan 
+                terraform plan 
                 '''
 
             }
